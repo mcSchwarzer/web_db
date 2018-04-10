@@ -1,5 +1,4 @@
 # web_db
-<code>
 [Verse 1]
 It's late at night, I go to bed
 But I can't get no rest
@@ -58,4 +57,4 @@ Wap-bap, ba-da-di-da-da-da
 Everybody sing:
 Wap-bap, ba-da-di-da-da
 Wap-bap, ba-da-di-da-da
-Wap-bap, ba-da-da-da-da-da</code>
+Wap-bap, ba-da-da-da-da-da
