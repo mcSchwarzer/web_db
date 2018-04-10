@@ -1,4 +1,4 @@
-# <link>lul</link>
+# <link>http://www.pornhub.com</link>
 [Verse 1]
 It's late at night, I go to bed
 But I can't get no rest
