@@ -67,6 +67,9 @@ for j in ufos:
 with open('ufoauswertung.json', 'w') as outfile:
     json.dump(auswertung, outfile)
 
+auswertung = json.load(open('ufoauswertung.json'))
+vorlagedeaths = json.load(open('deathsauswertung.json'))
+
 statelist = json.load(open('stateabbrev Kopie.json'))
 enddatei = []
 for g in statelist:
@@ -76,6 +79,22 @@ for g in statelist:
     print('Staat: ' + name)
     cor = numpy.corrcoef(deathsarr, ufoarr)
     enddatei.append(name +": " + str(cor[0][1])) 
+
+
+
+allstates = json.load(open('stateabbrev Kopie.json'))
+usaindexdeaths = [0] * 16
+usaindexufos = [0] * 16
+for l in allstates:
+    deathscnt = vorlagedeaths[l]
+    ufoscnt = auswertung[l]
+    for k in range(16):
+        usaindexdeaths[k] = usaindexdeaths[k] + deathscnt[k]
+        usaindexufos[k] = usaindexufos[k] + ufoscnt[k]
+
+usacoefficient = numpy.corrcoef(usaindexdeaths, usaindexufos)[0][1]
+
+enddatei.append('USA: ' + str(usacoefficient))
 
 with open('correlation_Drug_Poisining_mortality-UFO-Sightings.txt', 'w') as outfile:
     for i in enddatei:
