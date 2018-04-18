@@ -1,0 +1,62 @@
+import numpy as np
+from numpy import corrcoef as cc
+from numpy import genfromtxt
+import csv
+
+print("import's are done ...")
+
+ufolist = []
+donnerlist = []
+schneeEislist = []
+twlist = []
+hlist = []
+nlist = []
+nrlist = []
+
+with open('C:\\Users\\marku\\VS\webdb\\used FOR PREP\\result.csv') as csvfile, open('C:\\Users\\marku\\VS\webdb\\used FOR PREP\\prep_for_correl_d.csv') as csvfile2, open('C:\\Users\\marku\\VS\webdb\\used FOR PREP\\prep_for_correl_se.csv') as csvfile3, open('C:\\Users\\marku\\VS\webdb\\used FOR PREP\\prep_for_correl_tw.csv') as csvfile4, open('C:\\Users\\marku\\VS\webdb\\used FOR PREP\\prep_for_correl_h.csv') as csvfile5, open('C:\\Users\\marku\\VS\webdb\\used FOR PREP\\prep_for_correl_n.csv') as csvfile6, open('C:\\Users\\marku\\VS\webdb\\used FOR PREP\\prep_for_correl_nr.csv') as csvfile7:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        ufolist.append(int(row['sightings_per_day']))
+    reader2 = csv.DictReader(csvfile2)
+    for row in reader2:
+        donnerlist.append(int(row['occurences']))
+    reader3 = csv.DictReader(csvfile3)
+    for row in reader3:
+        schneeEislist.append(int(row['occurences']))
+    reader4 = csv.DictReader(csvfile4)
+    for row in reader4:
+        twlist.append(int(row['occurences']))
+    reader5 = csv.DictReader(csvfile5)
+    for row in reader5:
+        hlist.append(int(row['occurences']))
+    reader6 = csv.DictReader(csvfile6)
+    for row in reader6:
+        nlist.append(int(row['occurences']))
+    reader7 = csv.DictReader(csvfile7)
+    for row in reader7:
+        nrlist.append(int(row['occurences']))
+
+
+print(ufolist)
+
+print(donnerlist)
+print(ufolist.__sizeof__())
+print(donnerlist.__sizeof__())
+
+print("Donnerkorrelation: ")
+print(np.corrcoef(donnerlist,ufolist))
+
+print("SchneeEiskorrelation: ")
+print(np.corrcoef(schneeEislist,ufolist))
+
+print("tornadoWolkenkorrelation: ")
+print(np.corrcoef(twlist,ufolist))
+
+print("hailkorrelation: ")
+print(np.corrcoef(hlist,ufolist))
+
+print("nebelkorrelation: ")
+print(np.corrcoef(nlist,ufolist))
+
+print("nrkorrelation: ")
+print(np.corrcoef(nrlist,ufolist))
