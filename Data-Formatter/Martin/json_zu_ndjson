@@ -1,0 +1,134 @@
+package lul;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
+
+import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class ToNdJson {
+
+	public static void main(String[] args) throws IOException, JSONException {		
+		
+		
+		File fout = new File("C:\\Users\\Marti\\Desktop\\DB-Project\\education_data.json");
+		FileOutputStream fos = new FileOutputStream(fout);
+	 
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+		
+		InputStream is = new FileInputStream("C:\\Users\\Marti\\Desktop\\DB-Project\\edu_data.json");
+        String jsonTxt = IOUtils.toString(is, "UTF-8");
+        JSONArray jsonArray = new JSONArray(jsonTxt);
+        JSONObject jsonObj = null;
+        
+        for(int i = 0; i < jsonArray.length(); i ++ ) {
+        	jsonObj = jsonArray.getJSONObject(i);
+        	
+        	jsonObj.remove("OPEID");
+        	jsonObj.remove("UNITID");
+        	jsonObj.remove("OPEID6");
+        	jsonObj.remove("INSTURL");
+        	jsonObj.remove("NPCURL");
+        	jsonObj.remove("HCM2");
+        	jsonObj.remove("CONTROL");
+        	jsonObj.remove("HBCU");
+        	jsonObj.remove("PBI");
+        	jsonObj.remove("ANNHI");
+        	jsonObj.remove("TRIBAL");
+        	jsonObj.remove("HSI");
+        	jsonObj.remove("NANTI");
+        	jsonObj.remove("MENONLY");
+        	jsonObj.remove("WOMENONLY");
+        	jsonObj.remove("RELAFFIL");
+        	jsonObj.remove("DISTANCEONLY");
+        	jsonObj.remove("UGDS");
+        	jsonObj.remove("UGDS_WHITE");
+        	jsonObj.remove("UGDS_BLACK");
+        	jsonObj.remove("UGDS_HISP");
+        	jsonObj.remove("UGDS_ASIAN");
+        	jsonObj.remove("UGDS_AIAN");
+        	jsonObj.remove("UGDS_NHPI");
+        	jsonObj.remove("UGDS_2MOR");
+        	jsonObj.remove("UGDS_NRA");
+        	jsonObj.remove("UGDS_UNKN");
+        	jsonObj.remove("PPTUG_EF");
+        	jsonObj.remove("PCIP01");
+        	jsonObj.remove("PCIP03");
+        	jsonObj.remove("PCIP04");
+        	jsonObj.remove("PCIP05");
+        	jsonObj.remove("PCIP09");
+        	jsonObj.remove("PCIP10");
+        	jsonObj.remove("PCIP11");
+        	jsonObj.remove("PCIP12");
+        	jsonObj.remove("PCIP13");
+        	jsonObj.remove("PCIP14");
+        	jsonObj.remove("PCIP15");
+        	jsonObj.remove("PCIP16");
+        	jsonObj.remove("PCIP19");
+        	jsonObj.remove("PCIP22");
+        	jsonObj.remove("PCIP23");
+        	jsonObj.remove("PCIP24");
+        	jsonObj.remove("PCIP25");
+        	jsonObj.remove("PCIP26");
+        	jsonObj.remove("PCIP27");
+        	jsonObj.remove("PCIP29");
+        	jsonObj.remove("PCIP30");
+        	jsonObj.remove("PCIP31");
+        	jsonObj.remove("PCIP38");
+        	jsonObj.remove("PCIP39");
+        	jsonObj.remove("PCIP40");
+        	jsonObj.remove("PCIP41");
+        	jsonObj.remove("PCIP42");
+        	jsonObj.remove("PCIP43");
+        	jsonObj.remove("PCIP44");
+        	jsonObj.remove("PCIP45");
+        	jsonObj.remove("PCIP46");
+        	jsonObj.remove("PCIP47");
+        	jsonObj.remove("PCIP48");
+        	jsonObj.remove("PCIP49");
+        	jsonObj.remove("PCIP50");
+        	jsonObj.remove("PCIP51");
+        	jsonObj.remove("PCIP52");
+        	jsonObj.remove("PCIP54");
+        	jsonObj.remove("NPT4_PUB");
+        	jsonObj.remove("NPT4_PRIV");
+        	jsonObj.remove("NPT41_PUB");
+        	jsonObj.remove("NPT41_PRIV");
+        	jsonObj.remove("NPT42_PUB");
+        	jsonObj.remove("NPT42_PRIV");
+        	jsonObj.remove("NPT43_PUB");
+        	jsonObj.remove("NPT43_PRIV");
+        	jsonObj.remove("NPT44_PUB");
+        	jsonObj.remove("NPT44_PRIV");
+        	jsonObj.remove("NPT45_PUB");
+        	jsonObj.remove("NPT45_PRIV");
+        	jsonObj.remove("PCTPELL");
+        	jsonObj.remove("RET_FT4");
+        	jsonObj.remove("RET_FTL4");
+        	jsonObj.remove("RET_PT4");
+        	jsonObj.remove("RET_PTL4");
+        	jsonObj.remove("PCTFLOAN");
+        	jsonObj.remove("UG25ABV");
+        	jsonObj.remove("RPY_3YR_RT_SUPP");
+        	jsonObj.remove("C150_L4_POOLED_SUPP");
+        	jsonObj.remove("C150_4_POOLED_SUPP");
+        	
+
+        	bw.write("{\"index\":{\"_index\":\"edu_data_refined\",\"_id\":" + i + "}}" + "\r\n");
+			//bw.newLine();
+			bw.write(jsonObj.toString() + "\r\n");
+			//bw.newLine();
+        	System.out.println("Progress: " + i + "/" +jsonArray.length());
+        }
+		bw.close();
+    	System.out.println("finished");
+	}
+
+}
