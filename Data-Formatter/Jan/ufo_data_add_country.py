@@ -5,7 +5,7 @@ import json
 myCounter = 0
 countryFoundCounter = 0
 
-with open('C:\\Users\\JZimny\\Desktop\\DH\\Skripte\\4. Semester\\reichi projekt\\UFO Daten\\ufo_daten.json') as data_file:
+with open('<ufo data with faulty country values path>') as data_file:
     data = json.load(data_file)
     for item in data:
         if item["country"] == "":
@@ -15,7 +15,7 @@ with open('C:\\Users\\JZimny\\Desktop\\DH\\Skripte\\4. Semester\\reichi projekt\
                 results = rg.search(coordinates, mode=1)
                 item["country"] = list(results[0].items())[5][1].lower()
                 countryFoundCounter += 1
-        with open("C:\\Users\\JZimny\\Desktop\\DH\\Skripte\\4. Semester\\reichi projekt\\UFO Daten\\Python_ufo_data.json", 'a') as f:
+        with open("<Path where processed ufo data json should be saved>", 'a') as f:
             if myCounter == 0:
                 f.write("[\r\n")
             json.dump(item, f)  
