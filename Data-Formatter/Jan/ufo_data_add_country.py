@@ -9,7 +9,6 @@ with open('<ufo data with faulty country values path>') as data_file:
     data = json.load(data_file)
     for item in data:
         if item["country"] == "":
-            #geo = rg.RGeocoder(mode=2, verbose=True, stream=io.StringIO(open('C:\\Users\\JZimny\\Desktop\\DH\\Skripte\\4. Semester\\reichi projekt\\UFO Daten\\rg_cities1000.csv', encoding='utf-8').read()))
             if not item["lat"] == 0 and not item["lon"] == 0:
                 coordinates = (item["lat"], item["lon"])
                 results = rg.search(coordinates, mode=1)
