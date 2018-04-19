@@ -1,0 +1,236 @@
+package lul;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
+public class ufo_bildung {
+
+	public static void main(String[] args) throws IOException {
+
+		String counter[] = new String [51];   
+
+		counter[0]="AL";
+		counter[1]="AK";
+		counter[2]="AZ";
+		counter[3]="AR";
+		counter[4]="CA";
+		counter[5]="CO";
+		counter[6]="CT";
+		counter[7]="DE";
+		counter[8]="DC";
+		counter[9]="FL";
+		counter[10]="GA";
+		counter[11]="HI";
+		counter[12]="ID";
+		counter[13]="IL";
+		counter[14]="IN";
+		counter[15]="IA";
+		counter[16]="KS";
+		counter[17]="KY";
+		counter[18]="LA";
+		counter[19]="ME";
+		counter[20]="MT";
+		counter[21]="NE";
+		counter[22]="NV";
+		counter[23]="NH";
+		counter[24]="NJ";
+		counter[25]="NM";
+		counter[26]="NY";
+		counter[27]="NC";
+		counter[28]="ND";
+		counter[29]="OH";
+		counter[30]="OK";
+		counter[31]="OR";
+		counter[32]="MD";
+		counter[33]="MA";
+		counter[34]="MI";
+		counter[35]="MN";
+		counter[36]="MS";
+		counter[37]="MO";
+		counter[38]="PA";
+		counter[39]="RI";
+		counter[40]="SC";
+		counter[41]="SD";
+		counter[42]="TN";
+		counter[43]="TX";
+		counter[44]="UT";
+		counter[45]="VT";
+		counter[46]="VA";
+		counter[47]="WA";
+		counter[48]="WV";
+		counter[49]="WI";
+		counter[50]="WY";
+
+		
+		HashMap<String, Integer> sum = new HashMap<String, Integer>();
+		HashMap<String, Integer> sichtungen= new HashMap<String, Integer>();
+		HashMap<String, Integer> sat = new HashMap<String, Integer>();
+		HashMap<String, Integer> act = new HashMap<String, Integer>();
+
+
+		for(String s: counter){
+			sichtungen.put(s, 0);
+		}
+
+		for(String s: counter){
+			sum.put(s, 0);
+		}
+
+		for(String s: counter){
+			act.put(s, 0);
+		}
+
+		for(String s: counter){
+			sat.put(s, 0);
+		}
+
+		BufferedReader br_demo = new BufferedReader(new FileReader(new File("C:\\Users\\Marti\\Desktop\\DB-Project\\weitere_Datensätze\\chsi_dataset\\DEMOGRAPHICS.csv")));
+		BufferedReader br_ufo = new BufferedReader(new FileReader(new File("C:\\Users\\Marti\\Desktop\\DB-Project\\ufo_data_fullstatenames.csv")));
+		BufferedReader br_edu = new BufferedReader(new FileReader(new File("C:\\Users\\Marti\\Desktop\\DB-Project\\weitere_Datensätze\\College_Scoreboard\\Most-Recent-Cohorts-Scorecard-Elements.csv")));
+
+		String s_demo ="";
+		String s_ufo="";
+		String s_edu="";
+
+		ArrayList<String> lines_demo = new ArrayList<String>();
+		ArrayList<String> lines_ufo = new ArrayList<String>();
+		ArrayList<String> lines_edu = new ArrayList<String>();        
+
+		System.out.println(br_demo.readLine());
+		while((s_demo=br_demo.readLine()) != null ){
+			lines_demo.add(s_demo);
+		}
+
+		System.out.println(br_ufo.readLine());
+		while((s_ufo=br_ufo.readLine()) != null ){
+			lines_ufo.add(s_ufo);
+		}
+
+		String[] arrayspalten = br_edu.readLine().split(",");
+		for(int i = 0; i < arrayspalten.length; i ++ ) {
+			if(arrayspalten[i].compareTo("SAT_AVG") == 0) {
+				System.out.println("SAT_AVG INDEX ------------------------------------------\n " + i);
+			}
+		}
+		while((s_edu=br_edu.readLine()) != null ){
+			lines_edu.add(s_edu);
+		}
+
+		//demo
+
+		for(String s : lines_demo){
+			String commasplitter = s.split("\"")[0] + s.split("\"")[2];
+			int population = Integer.parseInt(commasplitter.split(",")[8]);
+			String state = s.split(",")[4];
+			if(sum.containsKey(state)){
+				int val = sum.get(state);
+				int newVal = val + population;
+				sum.remove(state);
+				sum.put(state, newVal);
+			}
+		}
+
+		System.out.println("In New York leben " + sum.get("NY") + " Einwohner!");
+
+		//ufo
+
+		int anzSichtungen = 0;
+
+		for(String q : lines_ufo){
+			String state = q.split(",")[9];
+			if(sichtungen.containsKey(state.toUpperCase())){
+				int val = sichtungen.get(state.toUpperCase());
+				anzSichtungen = val + 1;
+				sichtungen.remove(state.toUpperCase());
+				sichtungen.put(state.toUpperCase(), anzSichtungen);
+			}
+
+		}
+
+		System.out.println("In New York gab es insgesammt "+ sichtungen.get("NY") + " Sichtungen!");
+
+		float sichtungsKoeffizient = (float) sichtungen.get("NY") / sum.get("NY");
+		sichtungsKoeffizient = sichtungsKoeffizient * 10000;
+		System.out.println("In New York gibt es " + sichtungsKoeffizient + " Sichtungen pro 10.000 Einwohner!");
+
+		//edu
+
+		br_edu.readLine();
+
+		for(String w : lines_edu){
+
+			String sta = w.split(",")[5];
+
+			if(sat.containsKey(sta.toUpperCase())){
+				int satint=0;
+				if(!(w.split(",")[44]== null) && !(w.split(",")[44].equals("NULL"))){
+					System.out.println(w.split(",")[44]);
+					satint = Integer.parseInt(w.split(",")[44]);
+					int einpack= (sat.get(sta) + satint)/2;
+					sat.remove(sat);
+					sat.put(sta, einpack);
+				}else{
+					System.out.println(w.split(",")[44]);
+				}			
+			}
+
+			if(act.containsKey(sta.toUpperCase())){
+				int actint=0;
+				if(!(w.split(",")[40]==null) && !w.split(",")[40].equals("NULL")){
+					System.out.println(w.split(",")[40]);
+					actint = Integer.parseInt(w.split(",")[40]);
+					int einpack= (act.get(sta) + actint)/2;
+					act.remove(sta);
+					act.put(sta, einpack);
+				}else{
+					System.out.println(w.split(",")[40]);
+				}				
+			}
+		}
+
+		System.out.println("Der durchschnittliche SAT-Score in New York liegt bei: " + sat.get("NY") + ", der durchschnittliche ACT-Score in New York liegt bei: " + act.get("NY") + ".");
+
+		//BufferedWriter
+
+		File f = new File("C:\\Users\\Marti\\Desktop\\DB-Project\\sichtungen_bildung.csv");
+		FileOutputStream out = new FileOutputStream(f);
+		BufferedWriter wr = new BufferedWriter(new OutputStreamWriter(out));
+
+
+
+
+		wr.write("Staat,Bevölkerung,Ufo-Sichtungen,Ufo-Sichtungen pro 10.000 Einwohner,Durchschnittlicher SAT-Score,Durchschnittlicher ACT-Score\n");
+
+		//Berechnungen
+		for(int anzStaaten=0; anzStaaten<51; anzStaaten++){
+			float sichtungsKoef = (float) sichtungen.get(counter[anzStaaten]) / sum.get(counter[anzStaaten]);
+			sichtungsKoef= sichtungsKoef * 10000;
+			//int bildungsgrad = sat.get(counter[anzStaaten])
+
+			//Ergebnisse in Datei schreiben
+			wr.write(counter[anzStaaten] + "," +sum.get(counter[anzStaaten]) + "," +  sichtungen.get(counter[anzStaaten])+ "," + sichtungsKoef + "," + sat.get(counter[anzStaaten]) + "," + act.get(counter[anzStaaten])+"\n");
+		}
+
+
+		br_demo.close();
+		br_ufo.close();
+		br_edu.close();
+		wr.close();
+
+	}
+}
+
