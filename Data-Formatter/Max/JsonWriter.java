@@ -33,8 +33,8 @@ public class JsonWriter {
 	public static void main(String[] args) {
 
 		JsonWriter writer = new JsonWriter();
-		// writer.writeOnlyCoordninates();
-		writer.bubblesort();
+		writer.addStatenames();
+		writer.repairdates();
 	}
 
 	public void bubblesort() {
