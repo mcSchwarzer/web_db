@@ -40,8 +40,6 @@ print("Koeffizient SAT zu Ufo-Sichtungen mit allen Werten: ")
 print(np.corrcoef(satlist,sightlist))
 print("Koeffizient ACT zu Ufo-Sichtungen mit allen Werten: ")
 print(np.corrcoef(actlist,sightlist))
-print("Korrelation zw. ACT und SAT mit allen Werten: ")
-print(np.corrcoef(satlist, actlist))
 
 #alaska entfernen
 sightlist.remove(0.0)   
