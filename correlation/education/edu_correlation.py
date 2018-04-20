@@ -28,8 +28,6 @@ with open('C:\\Users\\marti\\Desktop\\DB-Project\\sichtungen_bildung.csv') as cs
     for row in reader3:
         print(row['Durchschnittlicher ACT-Score'])
         actlist.append(int(row['Durchschnittlicher ACT-Score']))
-   
-
 
 print(sightlist)
 print(satlist)
@@ -38,9 +36,29 @@ print(sightlist.__sizeof__())
 print(satlist.__sizeof__())
 print(actlist.__sizeof__())
 
-
-
-print("Koeffizient SAT zu Ufo-Sichtungen: ")
+print("Koeffizient SAT zu Ufo-Sichtungen mit allen Werten: ")
 print(np.corrcoef(satlist,sightlist))
-print("Koeffizient ACT zu Ufo-Sichtungen: ")
+print("Koeffizient ACT zu Ufo-Sichtungen mit allen Werten: ")
+print(np.corrcoef(actlist,sightlist))
+print("Korrelation zw. ACT und SAT mit allen Werten: ")
+print(np.corrcoef(satlist, actlist))
+
+#alaska entfernen
+sightlist.remove(0.0)   
+satlist.remove(757)
+actlist.remove(16)
+
+print("Koeffizient SAT zu Ufo-Sichtungen ohne Alaska (aufgrund fehlender Sichtungen): ")
+print(np.corrcoef(satlist,sightlist))
+print("Koeffizient ACT zu Ufo-Sichtungen ohne Alaska (aufgrund fehlender Sichtungen): ")
+print(np.corrcoef(actlist,sightlist))
+
+#hawaii entfernen
+sightlist.remove(0.007841944)
+satlist.remove(991)
+actlist.remove(21)
+
+print("Koeffizient SAT zu Ufo-Sichtungen ohne Alaska und Hawaii (aufgrund fehlender, sehr geringer Anzahl an Sichtungen): ")
+print(np.corrcoef(satlist,sightlist))
+print("Koeffizient ACT zu Ufo-Sichtungen ohne Alaska und Hawaii (aufgrund fehlender, sehr geringer Anzahl an Sichtungen): ")
 print(np.corrcoef(actlist,sightlist))
