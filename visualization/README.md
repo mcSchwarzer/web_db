@@ -40,6 +40,24 @@ PUT /correlation_drugs
     }
 }
 ```
+- Education-Daten:
+```javascript
+PUT /sichtungen_edu
+{
+  "mappings": {
+    "doc":{
+      "properties": {
+        "Staat":{"type": "keyword"},
+        "Bevoelkerung":{"type": "double"},
+        "Ufo-Sichtungen":{"type": "double"},
+        "Ufo-Sichtungen pro 10.000 Einwohner":{"type": "double"},
+        "Durchschnittlicher SAT-Score":{"type": "double"},
+        "Durchschnittlicher ACT-Score":{"type": "double"}
+      }
+    }
+  }
+}
+```
 
 ### 2. Einfügen der fertigen ND-JSON-Datensätze über Curl
 Dieser Befehl muss über die Bash aus dem Curl-Ordner ausgeführt werden *(/bin)*.
