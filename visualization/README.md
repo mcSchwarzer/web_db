@@ -69,4 +69,7 @@ curl -H "Content-Type: application/x-ndjson" –XPUT "http://localhost:9200/ufo_
 ```javascript
 curl -H "Content-Type: application/x-ndjson" –XPUT "http://localhost:9200/correlation_drugs/doc/_bulk?pretty" --data-binary @PFAD_ZUM_DROGEN_DATENSATZ_IN_NDJSON
 ```
-
+- Education-Daten:
+```javascript
+curl -H "Content-Type: application/x-ndjson" -XPUT "http://localhost:9200/sichtungen_edu/doc/_bulk?pretty" --data-binary @PFAD_ZUM_EDU_DATENSATZ_IN_NDJSON
+```
