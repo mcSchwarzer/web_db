@@ -4,6 +4,11 @@ from pprint import pprint
 import datetime
 import time
 import math
+import os
+
+os.environ["GOOGLE_API_KEY"] = "AIzaSyDtEkeX2WV6xnGhvcPnZYhUO98acPjTIWo"
+
+
 
 fulldates = [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007,
      2008, 2009, 2010, 2011, 2012, 2013, 2014]
@@ -69,6 +74,8 @@ vorlagedeaths = json.load(open('deathsauswertung.json'))
 
 statelist = json.load(open('stateabbrev Kopie.json'))
 enddatei = []
+states = []
+rates = []
 for g in statelist:
     name = str(g)
     deathsarr = vorlagedeaths[name]
@@ -77,6 +84,8 @@ for g in statelist:
     cor = numpy.corrcoef(deathsarr, ufoarr)
     if math.isnan(cor[0][1]):
         cor[0][1] = 0
+    states.append(name)     
+    rates.append(cor[0][1])
     enddatei.append("\"" + name + "\": " + str(cor[0][1])) 
 
 
@@ -94,6 +103,25 @@ for l in allstates:
 usacoefficient = numpy.corrcoef(usaindexdeaths, usaindexufos)[0][1]
 
 enddatei.append('\"USA\": ' + str(usacoefficient))
+states.append("USA")
+rates.append(usacoefficient)
+
+
+import geocoder
+
+coordinates = []
+for s in states:
+    g = geocoder.google(s)
+    lul = g.latlng
+    lng = lul[1]
+    lat = lul[0]
+    lul.clear()
+    lul.append(lng)
+    lul.append(lat)
+    print(lul)
+    coordinates.append(lul)
+
+jsonfinal = [{"State": s, "Correlation-Coefficient": r, "location": l} for s, r, l in zip(states, rates, coordinates)]
 
 with open('correlation_Drug_Poisining_mortality-UFO-Sightings.txt', 'w') as outfile:
     for i in enddatei:
@@ -101,11 +129,5 @@ with open('correlation_Drug_Poisining_mortality-UFO-Sightings.txt', 'w') as outf
 
 
 with open('correlation_Drug_Poisining_mortality-UFO-Sightings.json', 'w') as outfile:
-    outfile.write("{ \n")
-    for i in enddatei:
-        if i != len(enddatei):
-            outfile.write(str(i)+",\n")
-        else:
-            outfile.write(str(i)+"\n")
-    outfile.write("}")
+    outfile.write(json.dumps(jsonfinal))
 
