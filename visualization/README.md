@@ -72,7 +72,8 @@ PUT /correlation_drugs
       "doc": {
         "properties" : {
             "State" : { "type" : "keyword" },
-            "Correlation-Coefficient" : { "type" : "double" }
+            "Correlation-Coefficient" : { "type" : "double" },
+"location" : { "type" : "geo_point" }
         }
       }
     }
