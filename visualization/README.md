@@ -27,6 +27,37 @@ Um die relevanten Daten einzuspeisen folgen Sie bitte folgenden Anweisungen:
 }
 ```
 - Drogendaten:
+```python
+PUT /drug_poisining_mortality_usa
+{
+    "mappings" : {
+      "doc": {
+        "properties" : {
+            "State" : { "type" : "keyword"},
+            "Year" : { "type" : "date", "format": "yyyy"},
+            "Sex" : { "type" : "keyword" },
+            "Age Group" : { "type" : "keyword" },
+            "Race and Hispanic Origin" : { "type" : "keyword" },
+            "Deaths" : { "type" : "integer" },
+            "Population" : { "type" : "integer" },
+            "Crude Death Rate" : { "type" : "double" },
+            "Standard Error for Crude Rate" : { "type" : "double"},
+            "Lower Confidence Limit for Crude Rate" : { "type" : "double" },
+            "Upper Confidence Limit for Crude Rate" : { "type" : "double" },
+            "Age-adjusted Rate" : { "type" : "double" },
+            "Standard Error for Age-adjusted Rate" : { "type" : "double" },
+            "Lower Confidence Limit for Age-adjusted Rate" : { "type" : "double" },
+            "Upper Confidence Limit for Age-adjusted Rate" : { "type" : "double" },
+            "State Crude Rate in Range" : { "type" : "text" },
+            "US Crude Rate" : { "type" : "double" },
+            "US Age-Adjusted Rate" : { "type" : "double" }
+        }
+      }
+    }
+}
+
+```
+- Drogenkorrelation:
 ```javascript
 PUT /correlation_drugs
 {
@@ -66,8 +97,12 @@ Dieser Befehl muss über die Bash aus dem Curl-Ordner ausgeführt werden *(/bin)
 curl -H "Content-Type: application/x-ndjson" –XPUT "http://localhost:9200/ufo_data_refined/doc/_bulk?pretty" --data-binary @PFAD_ZUM_UFO_DATENSATZ_IN_NDJSON
 ```
 - Drogen-Daten:
+```python
+curl -H "Content-Type: application/x-ndjson" –XPUT "http://localhost:9200/drug_poisining_mortality_usa/doc/_bulk?pretty" --data-binary @PFAD_ZUM_DROGEN_DATENSATZ_IN_NDJSON
+```
+- Drogenkorrelation:
 ```javascript
-curl -H "Content-Type: application/x-ndjson" –XPUT "http://localhost:9200/correlation_drugs/doc/_bulk?pretty" --data-binary @PFAD_ZUM_DROGEN_DATENSATZ_IN_NDJSON
+curl -H "Content-Type: application/x-ndjson" –XPUT "http://localhost:9200/correlation_drugs/doc/_bulk?pretty" --data-binary @PFAD_ZUM_DROGEN_DATENSATZ-DROGEN-KORRELATION_IN_NDJSON
 ```
 - Education-Daten:
 ```javascript
