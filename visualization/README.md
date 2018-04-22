@@ -97,6 +97,90 @@ PUT /sichtungen_edu
   }
 }
 ```
+- UFO-Daten pro Quartal:
+```javascript
+PUT /sightings_per_quarter
+{
+  "mappings": {
+    "doc": {
+      "properties": {
+        "quarter": {
+          "type": "date",
+          "format": "yyyy/MM/dd"
+        },
+        "amount_of_sightings" : {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
+
+```
+
+-Wetterdaten pro Qurtal:
+
+```javascript
+PUT /weather_per_quarter
+{
+  "mappings": {
+    "doc": {
+      "properties": {
+        "quarter": {
+          "type": "date",
+          "format": "yyyy/MM/dd"
+        },
+        "n": {
+          "type": "integer"
+        },
+        "nr": {
+          "type": "integer"
+        },
+        "se": {
+          "type": "integer"
+        },
+        "h": {
+          "type": "integer"
+        },
+        "d": {
+          "type": "integer"
+        },
+        "tw": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
+```
+
+```javascript
+PUT /weather_sightings_per_day
+{
+  "mappings": {
+    "doc": {
+      "properties": {
+        "Date": {
+          "type": "date",
+          "format": "yyyy/MM/dd"
+        },
+        "occurrences": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "integer"
+        },
+        "ufo_amount": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}
+
+```
+
+
 
 ### 3. Einfügen der fertigen ND-JSON-Datensätze über Curl
 Dieser Befehl muss über die Bash aus dem Curl-Ordner ausgeführt werden *(/bin)*.
@@ -116,3 +200,9 @@ curl -H "Content-Type: application/x-ndjson" –XPUT "http://localhost:9200/corr
 ```javascript
 curl -H "Content-Type: application/x-ndjson" -XPUT "http://localhost:9200/sichtungen_edu/doc/_bulk?pretty" --data-binary @PFAD_ZUM_EDU_DATENSATZ_IN_NDJSON
 ```
+- Wetterdaten:
+```javascript
+curl -H "Content-Type: application/x-ndjson" -XPUT "http://localhost:9200/weather_sightings_per_day/doc/_bulk?pretty" --data-binary @PFAD_ZUM_Wetter_DATENSATZ_IN_NDJSON
+```
+
+
