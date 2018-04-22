@@ -2,7 +2,14 @@
 Elasticsearch und Kibana helfen zur Visualisierung und letztlich Datenauswertung.
 Um die relevanten Daten einzuspeisen folgen Sie bitte folgenden Anweisungen:
 
-### 1. Auf der Kibana Devtools-Konsole den Index initialisieren:
+### 1. Benötigte Datensätze
+- Ufo-Daten: https://drive.google.com/open?id=1eSVekQTN42jVxzbF8riCtnvnrrtH61Fl
+- Drogendaten: https://drive.google.com/open?id=1i8N5G79ts68HD828LyvoUPgU6p5NheDX
+- Drogenkorrelation: https://drive.google.com/open?id=1YVLWI0Ip-zYtef5lf6Dc0ia-f1sJhBa2
+- Educationdaten: https://drive.google.com/drive/folders/15mKNTdasC1_kLPWK0FDADs-i3QgbG09u
+
+
+### 2. Auf der Kibana Devtools-Konsole den Index initialisieren:
 - Ufo-Daten:
  ```javascript
  PUT /ufo_data_refined
@@ -90,7 +97,7 @@ PUT /sichtungen_edu
 }
 ```
 
-### 2. Einfügen der fertigen ND-JSON-Datensätze über Curl
+### 3. Einfügen der fertigen ND-JSON-Datensätze über Curl
 Dieser Befehl muss über die Bash aus dem Curl-Ordner ausgeführt werden *(/bin)*.
 - UFO-Daten:
 ```javascript
