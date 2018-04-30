@@ -1,6 +1,8 @@
 package JsonWriter;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -33,8 +35,51 @@ public class JsonWriter {
 	public static void main(String[] args) {
 
 		JsonWriter writer = new JsonWriter();
-		writer.addStatenames();
-		writer.repairdates();
+		writer.csvtojson();
+	//	writer.repairdates();
+//		writer.addStatenames();
+//		writer.repairdates();
+	}
+	
+	public void csvtojson(){
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(new File("/Users/Max/Downloads/convertcsvbackupfull (4).csv")));
+			BufferedWriter writer = new BufferedWriter(new FileWriter(new File("ufocsvtojson.json")));
+			String first = reader.readLine();
+			String[] headers = first.split(",");
+			System.out.println("Header-Length" + headers.length);
+			
+			JSONArray finalarray = new JSONArray();
+			String temp;
+			int cnt = 0;
+			writer.write("[\n");
+			while((temp = reader.readLine()) != null){
+				if(cnt != 0){
+					writer.write(",\n");
+				}
+				String [] arr = temp.split(",");
+				if(arr.length != headers.length){
+					System.out.println("Wrong data in Object " + cnt);
+					System.out.println(temp);
+				}else{
+					JSONObject obj = new JSONObject();
+					for(int i = 0; i < headers.length; i++){
+						obj.put(headers[i], arr[i]);
+					}
+					finalarray.add(obj);	
+					writer.write(obj.toJSONString().replace("\\", ""));
+				}
+				
+				cnt++;
+				//System.out.println("Progress: " + cnt);
+			}
+			writer.write("\n]");
+			writer.close();
+			reader.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	public void bubblesort() {
@@ -118,7 +163,7 @@ public class JsonWriter {
 		int fullcounter = 0;
 		try {
 			JSONArray array = (JSONArray) parser.parse(new FileReader(
-					"/Users/Max/Desktop/Dokumente/Theoriephase IV/Webbasierte Datenbanken/Numpy-WS/finaledata.json"));
+					"UFO-Sightings_fullStatenames.json"));
 			Iterator i = array.iterator();
 			JSONArray finalarray = new JSONArray();
 			while (i.hasNext()) {
