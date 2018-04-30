@@ -118,7 +118,7 @@ PUT /sightings_per_quarter
 
 ```
 
--Wetterdaten pro Qurtal:
+- Wetterdaten pro Qurtal:
 
 ```javascript
 PUT /weather_per_quarter
