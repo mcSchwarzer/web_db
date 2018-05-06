@@ -6,22 +6,27 @@ myCounter = 0
 countryFoundCounter = 0
 finalstring = ''
 
+filetowrite = "finaledata.json"
+
+with open(filetowrite, 'w') as f:
+    f.write("")
+
 with open('/Users/Max/Desktop/Dokumente/Theoriephase IV/Webbasierte Datenbanken/Java-Workspace/Json-Converter/UFO-Sightings_fullStatenames.json') as data_file:
     data = json.load(data_file)
     for item in data:
         if item["country"] == "":
-            if not item["latitude"] == 0 and not item["longitude"] == 0 and (str(item["latitude"]).isdigit() and str(item["longitude"]).isdigit()):
+            if (not item["latitude"] == 0 and not item["longitude"] == 0) and (str(item["latitude"]).replace('.','',1).replace('-','',1).isdigit() and str(item["longitude"]).replace('.','',1).replace('-','',1).isdigit()):
                 coordinates = (item["latitude"], item["longitude"])
                 results = rg.search(coordinates, mode=1)
                 item["country"] = list(results[0].items())[5][1].lower()
                 item["fullState"] = list(results[0].items())[3][1]
                 countryFoundCounter += 1
-        with open("finaledata.json", 'a') as f:
+        with open(filetowrite, 'a') as f:
             if myCounter == 0:
-                f.write("[\r\n")
+                f.write("[\n")
             json.dump(item, f)  
             if len(data) != (myCounter + 1): 
-                f.write("," + "\r\n")
+                f.write("," + "\n")
             else:
                 f.write("]")  
         myCounter += 1  
