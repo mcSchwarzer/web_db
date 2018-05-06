@@ -6,11 +6,11 @@ myCounter = 0
 countryFoundCounter = 0
 finalstring = ''
 
-with open('/Users/Max/Desktop/Dokumente/Theoriephase IV/Webbasierte Datenbanken/Java-Workspace/Json-Converter/UFO-Sightings_fullStatename.json') as data_file:
+with open('/Users/Max/Desktop/Dokumente/Theoriephase IV/Webbasierte Datenbanken/Java-Workspace/Json-Converter/UFO-Sightings_fullStatenames.json') as data_file:
     data = json.load(data_file)
     for item in data:
         if item["country"] == "":
-            if not item["latitude"] == 0 and not item["longitude"] == 0:
+            if not item["latitude"] == 0 and not item["longitude"] == 0 and (str(item["latitude"]).isdigit() and str(item["longitude"]).isdigit()):
                 coordinates = (item["latitude"], item["longitude"])
                 results = rg.search(coordinates, mode=1)
                 item["country"] = list(results[0].items())[5][1].lower()
