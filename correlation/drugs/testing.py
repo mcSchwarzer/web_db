@@ -32,7 +32,9 @@ for i in data:
 with open('deathsauswertung.json', 'w') as outfile:
     json.dump(vorlagedeaths, outfile)
 
-ufos = json.load(open('/Users/Max/Desktop/Dokumente/Theoriephase IV/Webbasierte Datenbanken/Java-Workspace/Json-Converter/UFO-Sightings_fullStatenames.json'))
+#ufos = json.load(open('/Users/Max/Desktop/Dokumente/Theoriephase IV/Webbasierte Datenbanken/Java-Workspace/Json-Converter/UFO-Sightings_fullStatenames.json'))
+ufos = json.load(open('finaledata.json'))
+
 
 l = [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007,
      2008, 2009, 2010, 2011, 2012, 2013, 2014]
@@ -47,11 +49,14 @@ wrongcounter = 0
 for j in ufos:
     # print(j['fullState'])
     state = str(j["fullState"])
+    
     if (state == "" or state == "None" or j["country"] != 'us'):
         print("wrong state" + str(wrongcounter))
     else:
-        #print(state)
+        if "Washington" in state:
+            state = "Washington"
         temparray = auswertung[state]
+
         # print(j['datetime'])
         struct_time = time.strptime(str(j["datetime"]), '%m/%d/%Y %H:%M')
         year = time.strftime('%Y', struct_time)
