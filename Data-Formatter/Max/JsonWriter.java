@@ -35,43 +35,46 @@ public class JsonWriter {
 	public static void main(String[] args) {
 
 		JsonWriter writer = new JsonWriter();
-		writer.csvtojson();
-	//	writer.repairdates();
-//		writer.addStatenames();
-//		writer.repairdates();
+		writer.addStatenames();
+		writer.repairdates();
+		
+		// writer.repairdates();
+		// writer.addStatenames();
+		// writer.repairdates();
 	}
-	
-	public void csvtojson(){
+
+	public void csvtojson() {
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(new File("/Users/Max/Downloads/convertcsvbackupfull (4).csv")));
+			BufferedReader reader = new BufferedReader(
+					new FileReader(new File("/Users/Max/Downloads/convertcsvbackupfull (4).csv")));
 			BufferedWriter writer = new BufferedWriter(new FileWriter(new File("ufocsvtojson.json")));
 			String first = reader.readLine();
 			String[] headers = first.split(",");
 			System.out.println("Header-Length" + headers.length);
-			
+
 			JSONArray finalarray = new JSONArray();
 			String temp;
 			int cnt = 0;
 			writer.write("[\n");
-			while((temp = reader.readLine()) != null){
-				if(cnt != 0){
+			while ((temp = reader.readLine()) != null) {
+				if (cnt != 0) {
 					writer.write(",\n");
 				}
-				String [] arr = temp.split(",");
-				if(arr.length != headers.length){
+				String[] arr = temp.split(",");
+				if (arr.length != headers.length) {
 					System.out.println("Wrong data in Object " + cnt);
 					System.out.println(temp);
-				}else{
+				} else {
 					JSONObject obj = new JSONObject();
-					for(int i = 0; i < headers.length; i++){
+					for (int i = 0; i < headers.length; i++) {
 						obj.put(headers[i], arr[i]);
 					}
-					finalarray.add(obj);	
+					finalarray.add(obj);
 					writer.write(obj.toJSONString().replace("\\", ""));
 				}
-				
+
 				cnt++;
-				//System.out.println("Progress: " + cnt);
+				// System.out.println("Progress: " + cnt);
 			}
 			writer.write("\n]");
 			writer.close();
@@ -79,7 +82,7 @@ public class JsonWriter {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public void bubblesort() {
@@ -91,9 +94,9 @@ public class JsonWriter {
 			int size = array.size();
 			for (int j = 0; j < size; j++) {
 				int smallestCorrIndex = 0;
-				for (int i = 0; i < array.size() -1 ; i++) {
+				for (int i = 0; i < array.size() - 1; i++) {
 					if ((double) (((JSONObject) array.get(smallestCorrIndex))
-							.get("Correlation-Coefficient")) > ((double)((JSONObject)array.get(i + 1))
+							.get("Correlation-Coefficient")) > ((double) ((JSONObject) array.get(i + 1))
 									.get("Correlation-Coefficient"))) {
 
 						smallestCorrIndex = i + 1;
@@ -103,25 +106,25 @@ public class JsonWriter {
 
 					}
 				}
-				
+
 				JSONObject tmp = (JSONObject) array.get(smallestCorrIndex);
 				array.remove(smallestCorrIndex);
 				arrayTarget.add(tmp);
-				
+
 			}
 			System.out.println(arrayTarget.size());
 			BufferedWriter writer = new BufferedWriter(new FileWriter("sortierteKorrelation.txt"));
-			for(int cnt = 0; cnt < arrayTarget.size();cnt++){
-				JSONObject lul = (JSONObject)arrayTarget.get(cnt);
-				writer.write(lul.get("State")+": "+lul.get("Correlation-Coefficient")+"\r\n");
+			for (int cnt = 0; cnt < arrayTarget.size(); cnt++) {
+				JSONObject lul = (JSONObject) arrayTarget.get(cnt);
+				writer.write(lul.get("State") + ": " + lul.get("Correlation-Coefficient") + "\r\n");
 			}
-			for(int cnt = 0; cnt < arrayTarget.size();cnt++){
-				JSONObject lul = (JSONObject)arrayTarget.get(cnt);
-				writer.write(lul.get("State")+"\r\n");
+			for (int cnt = 0; cnt < arrayTarget.size(); cnt++) {
+				JSONObject lul = (JSONObject) arrayTarget.get(cnt);
+				writer.write(lul.get("State") + "\r\n");
 			}
-			for(int cnt = 0; cnt < arrayTarget.size();cnt++){
-				JSONObject lul = (JSONObject)arrayTarget.get(cnt);
-				int lululul = (int) ((double)lul.get("Correlation-Coefficient") * 10000);
+			for (int cnt = 0; cnt < arrayTarget.size(); cnt++) {
+				JSONObject lul = (JSONObject) arrayTarget.get(cnt);
+				int lululul = (int) ((double) lul.get("Correlation-Coefficient") * 10000);
 				double xnew = (Math.round(lululul) / 10000.0);
 				writer.write(xnew + "\r\n");
 			}
@@ -162,8 +165,7 @@ public class JsonWriter {
 		int wrongcounter = 0;
 		int fullcounter = 0;
 		try {
-			JSONArray array = (JSONArray) parser.parse(new FileReader(
-					"UFO-Sightings_fullStatenames.json"));
+			JSONArray array = (JSONArray) parser.parse(new FileReader("UFO-Sightings_fullStatenames.json"));
 			Iterator i = array.iterator();
 			JSONArray finalarray = new JSONArray();
 			while (i.hasNext()) {
@@ -197,7 +199,7 @@ public class JsonWriter {
 				fullcounter++;
 			}
 			FileWriter writer = new FileWriter("UFO-Sightings_fullStatenames.json");
-			writer.write(finalarray.toString());
+			writer.write(finalarray.toString().replace("\\", ""));
 			writer.flush();
 			System.out.println("Falsche Daten: " + wrongcounter + "\n Fullcounter: " + fullcounter);
 		} catch (Exception e) {
@@ -209,7 +211,7 @@ public class JsonWriter {
 		JSONParser parser = new JSONParser();
 		int wrongcounter = 0;
 		try {
-			JSONArray array = (JSONArray) parser.parse(new FileReader("/Users/Max/Downloads/fulldata.json"));
+			JSONArray array = (JSONArray) parser.parse(new FileReader("/Users/Max/Downloads/UFO-Sightings_fullStatenames.json"));
 			JSONObject abbrev = (JSONObject) parser.parse(new FileReader("stateabbrev.json"));
 
 			JSONObject errorobj = new JSONObject();
@@ -255,12 +257,13 @@ public class JsonWriter {
 			// FileWriter writer = new FileWriter("wrongstateauswertung.json");
 			// writer.write(errorobj.toJSONString().replace("\\", ""));
 			// writer.flush();
-			//Gson gson = new GsonBuilder().setPrettyPrinting().create();
-//			JsonParser jp = new JsonParser();
-//			JsonElement je = jp.parse(finalarray.toJSONString().replace("\\", ""));
+			// Gson gson = new GsonBuilder().setPrettyPrinting().create();
+			// JsonParser jp = new JsonParser();
+			// JsonElement je = jp.parse(finalarray.toJSONString().replace("\\",
+			// ""));
 			String tempstring = finalarray.toString().replace("\\", "");
-//			JsonArray arr = (JsonArray) jp.parse(tempstring);
-//			String prettyJsonString = gson.toJson(arr);
+			// JsonArray arr = (JsonArray) jp.parse(tempstring);
+			// String prettyJsonString = gson.toJson(arr);
 
 			FileWriter writer = new FileWriter("UFO-Sightings_fullStatenames.json");
 			writer.write(tempstring);
@@ -427,6 +430,13 @@ public class JsonWriter {
 
 	@SuppressWarnings("unchecked")
 	public void writeOnlyCoordninates() {
+		/*
+		 * Diese Methode war ursprünglich dazu da, um die UFO-Sichtungen auf
+		 * eine Karte zu bringen. Dabei wurde auf die Google-Maps-API
+		 * zugegriffen. Diese wurde über ein React-basiertes Framework verwendet
+		 * (https://github.com/tomchentw/react-google-maps).
+		 * 
+		 */
 		JSONParser parser = new JSONParser();
 		JSONArray finalarray = new JSONArray();
 		int notcounter = 0;
