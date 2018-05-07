@@ -180,6 +180,7 @@ public class JsonWriter {
 					// Matcher matcher = pattern.matcher(date);
 					// System.out.println(matcher.find() + matcher.group(1));
 					date = date.replaceAll("(24:00)", "00:00");
+					
 					wrongcounter++;
 					System.out.println(date);
 				}
@@ -211,7 +212,7 @@ public class JsonWriter {
 		JSONParser parser = new JSONParser();
 		int wrongcounter = 0;
 		try {
-			JSONArray array = (JSONArray) parser.parse(new FileReader("/Users/Max/Downloads/UFO-Sightings_fullStatenames.json"));
+			JSONArray array = (JSONArray) parser.parse(new FileReader("/Users/Max/Downloads/fulldata.json"));
 			JSONObject abbrev = (JSONObject) parser.parse(new FileReader("stateabbrev.json"));
 
 			JSONObject errorobj = new JSONObject();
