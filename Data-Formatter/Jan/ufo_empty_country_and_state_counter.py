@@ -4,7 +4,7 @@ import io
 emptyCountryB = 0
 emptyStateB = 0
 
-with open('C:\\Users\\JZimny\\Desktop\\DH\\Skripte\\4. Semester\\reichi projekt\\UFO Daten\\ufo_daten.json') as data_file:
+with open('<Path to original ufo data file>') as data_file:
     data = json.load(data_file)
     for item in data:
         if item["country"] == "" or item["country"] == None or item["country"] == " ":
@@ -18,7 +18,7 @@ print("Anzahl nicht vorhandener state datensaetze davor: " + str(emptyStateB))
 emptyCountryA = 0
 emptyStateA = 0
 
-with open('C:\\Users\\JZimny\\Desktop\\DH\\Skripte\\4. Semester\\reichi projekt\\UFO Daten\\Python_ufo_data.json') as data_file:
+with open('<Path to edited file>') as data_file:
     data = json.load(data_file)
     for item in data:
         if item["country"] == "" or item["country"] == None or item["country"] == " ":
