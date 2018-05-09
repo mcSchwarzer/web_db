@@ -15,6 +15,9 @@ s_and_p_500_per_month = [[104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
+with open("docs/Correl_ufo_sandp_results.txt", 'w') as wr:
+   wr.write("")
+
 data = json.load(open('src/sundp500.json'))
 sandpCnt = 0
 for i in data:

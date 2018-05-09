@@ -4,7 +4,7 @@ python3 edu_correlation.py
 python3 ufo_location_correction.py
 java -jar Data_Formatter.jar
 python3 deathmortalitycorrelation.py
-python3 correlation_ufo_and_undp500_data.py
+python3 correlation_ufo_and_sundp500_data.py
 
 printf "Es folgt die Erstellung der NDJSON-Datei\n"
 java -jar ToNdJson.jar
