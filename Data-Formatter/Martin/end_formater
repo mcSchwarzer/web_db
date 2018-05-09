@@ -1,0 +1,44 @@
+package lul;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStreamWriter;
+
+import org.apache.commons.io.IOUtils;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class to_ndjson_edu_ufo {
+
+	public static void main(String[] args) throws IOException, JSONException {		
+		
+		
+		File fout = new File("C:\\Users\\Marti\\Desktop\\DB-Project\\sichtungen_edu.json");
+		FileOutputStream fos = new FileOutputStream(fout);
+	 
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+		
+		InputStream is = new FileInputStream("C:\\Users\\Marti\\Desktop\\DB-Project\\sichtungen_bildung.json");
+        String jsonTxt = IOUtils.toString(is, "UTF-8");
+        JSONArray jsonArray = new JSONArray(jsonTxt);
+        JSONObject jsonObj = null;
+        
+        for(int i = 0; i < jsonArray.length(); i ++ ) {
+        	jsonObj = jsonArray.getJSONObject(i);
+        	
+        	bw.write("{\"index\":{\"_index\":\"sichtungen_edu\",\"_id\":" + i + "}}" + "\r\n");
+			//bw.newLine();
+			bw.write(jsonObj.toString() + "\r\n");
+			//bw.newLine();
+        	System.out.println("Progress: " + i + "/" +jsonArray.length());
+        }
+		bw.close();
+    	System.out.println("finished");
+	}
+
+}
