@@ -84,25 +84,25 @@ print("Gesamtkorrelation (Matrix): ")
 print(str(numpy.corrcoef(s_and_p_500_per_month, ufo_sightings_per_month)[0][1]))
 
 
-Create JSON with arraydata
-with open("<Target_Path_For_Json>", 'a') as f:
-    dataCnt = 0
-    for i in range(0, 9):
-        for j in range(0, 12):
-            f.write("{\"index\":{\"_index\":\"corell_ufo_sandp\",\"_id\":" + str(dataCnt) + "}}," + "\n")
-            d = {
-                'average_month': s_and_p_500_per_month[i][j],
-                'ufo_sightings_count': ufo_sightings_per_month[i][j],
-                'month': str(l[i]) + "/" + str(j + 1)
-            }
-            
-            if j == 11 and i == 8:
-                f.write(json.dumps(d))
-                f.write("\r\n")
-            else:
-                f.write(json.dumps(d) + "\n")
-            print(str(dataCnt + 1) + "/" + str(108))
-            dataCnt += 1 
+#Create JSON with arraydata
+#with open("<Target_Path_For_Json>", 'a') as f:
+#    dataCnt = 0
+#    for i in range(0, 9):
+#        for j in range(0, 12):
+#            f.write("{\"index\":{\"_index\":\"corell_ufo_sandp\",\"_id\":" + str(dataCnt) + "}}," + "\n")
+#            d = {
+#                'average_month': s_and_p_500_per_month[i][j],
+#                'ufo_sightings_count': ufo_sightings_per_month[i][j],
+#                'month': str(l[i]) + "/" + str(j + 1)
+#            }
+#            
+#            if j == 11 and i == 8:
+#                f.write(json.dumps(d))
+#                f.write("\r\n")
+#            else:
+#                f.write(json.dumps(d) + "\n")
+#            print(str(dataCnt + 1) + "/" + str(108))
+#            dataCnt += 1 
 
 
     
