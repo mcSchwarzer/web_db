@@ -15,7 +15,7 @@ s_and_p_500_per_month = [[104, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-data = json.load(open('sundp500.json'))
+data = json.load(open('src/sundp500.json'))
 sandpCnt = 0
 for i in data:
     sandpCnt += 1
@@ -33,7 +33,7 @@ for i in data:
 
 
 
-ufos = json.load(open('UFO Daten/Python_ufo_data.json'))
+ufos = json.load(open('src/fulldata.json'))
 
 l = [2005, 2006, 2007,
      2008, 2009, 2010, 2011, 2012, 2013]

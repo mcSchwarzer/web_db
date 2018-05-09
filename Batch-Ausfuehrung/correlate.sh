@@ -1,13 +1,12 @@
 #!/bin/bash
 
-python3 educationcorrelation.py
-
+python3 edu_correlation.py
 python3 ufo_location_correction.py
 java -jar Data_Formatter.jar
 python3 deathmortalitycorrelation.py
-printf "Es folgt die Erstellung der NDJSON-Datei\n"
 python3 correlation_ufo_and_undp500_data.py
 
+printf "Es folgt die Erstellung der NDJSON-Datei\n"
 java -jar ToNdJson.jar
 
 printf "_________________________________________________________________________\n"

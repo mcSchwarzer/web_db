@@ -130,6 +130,6 @@ with open('docs/correlation_Drug_Poisining_mortality-UFO-Sightings.txt', 'w') as
         outfile.write(str(i)+"\n")
 
 
-with open('docs/correlation_Drug_Poisining_mortality-UFO-Sightings.json', 'w') as outfile:
+with open('src/correlation_Drug_Poisining_mortality-UFO-Sightings.json', 'w') as outfile:
     outfile.write(json.dumps(jsonfinal))
 

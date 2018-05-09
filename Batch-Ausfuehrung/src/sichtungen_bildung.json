@@ -1,0 +1,410 @@
+[
+  {
+    "Staat": "AL",
+    "Bevoelkerung": 4557808,
+    "Ufo-Sichtungen": 753,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 1.65211,
+    "Durchschnittlicher SAT-Score": 976,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "AK",
+    "Bevoelkerung": 663661,
+    "Ufo-Sichtungen": 0,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 0,
+    "Durchschnittlicher SAT-Score": 757,
+    "Durchschnittlicher ACT-Score": 16
+  },
+  {
+    "Staat": "AZ",
+    "Bevoelkerung": 5939292,
+    "Ufo-Sichtungen": 2923,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 4.9214616,
+    "Durchschnittlicher SAT-Score": 1067,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "AR",
+    "Bevoelkerung": 2779154,
+    "Ufo-Sichtungen": 723,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.601511,
+    "Durchschnittlicher SAT-Score": 962,
+    "Durchschnittlicher ACT-Score": 20
+  },
+  {
+    "Staat": "CA",
+    "Bevoelkerung": 36132147,
+    "Ufo-Sichtungen": 10399,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.8780463,
+    "Durchschnittlicher SAT-Score": 1101,
+    "Durchschnittlicher ACT-Score": 24
+  },
+  {
+    "Staat": "CO",
+    "Bevoelkerung": 4665177,
+    "Ufo-Sichtungen": 1619,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 3.4703934,
+    "Durchschnittlicher SAT-Score": 988,
+    "Durchschnittlicher ACT-Score": 20
+  },
+  {
+    "Staat": "CT",
+    "Bevoelkerung": 3510297,
+    "Ufo-Sichtungen": 1054,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 3.002595,
+    "Durchschnittlicher SAT-Score": 1041,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "DE",
+    "Bevoelkerung": 843524,
+    "Ufo-Sichtungen": 196,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.3235853,
+    "Durchschnittlicher SAT-Score": 829,
+    "Durchschnittlicher ACT-Score": 17
+  },
+  {
+    "Staat": "DC",
+    "Bevoelkerung": 550521,
+    "Ufo-Sichtungen": 114,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.0707657,
+    "Durchschnittlicher SAT-Score": 1162,
+    "Durchschnittlicher ACT-Score": 25
+  },
+  {
+    "Staat": "FL",
+    "Bevoelkerung": 17789864,
+    "Ufo-Sichtungen": 4505,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.5323408,
+    "Durchschnittlicher SAT-Score": 1138,
+    "Durchschnittlicher ACT-Score": 25
+  },
+  {
+    "Staat": "GA",
+    "Bevoelkerung": 9072576,
+    "Ufo-Sichtungen": 1465,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 1.6147563,
+    "Durchschnittlicher SAT-Score": 1178,
+    "Durchschnittlicher ACT-Score": 25
+  },
+  {
+    "Staat": "HI",
+    "Bevoelkerung": 1275194,
+    "Ufo-Sichtungen": 1,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 0.007841944,
+    "Durchschnittlicher SAT-Score": 991,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "ID",
+    "Bevoelkerung": 1429096,
+    "Ufo-Sichtungen": 601,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 4.205456,
+    "Durchschnittlicher SAT-Score": 1016,
+    "Durchschnittlicher ACT-Score": 22
+  },
+  {
+    "Staat": "IL",
+    "Bevoelkerung": 12763371,
+    "Ufo-Sichtungen": 2864,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.2439213,
+    "Durchschnittlicher SAT-Score": 1050,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "IN",
+    "Bevoelkerung": 6271973,
+    "Ufo-Sichtungen": 1502,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.3947806,
+    "Durchschnittlicher SAT-Score": 1183,
+    "Durchschnittlicher ACT-Score": 26
+  },
+  {
+    "Staat": "IA",
+    "Bevoelkerung": 2966334,
+    "Ufo-Sichtungen": 766,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.582312,
+    "Durchschnittlicher SAT-Score": 1039,
+    "Durchschnittlicher ACT-Score": 22
+  },
+  {
+    "Staat": "KS",
+    "Bevoelkerung": 2744687,
+    "Ufo-Sichtungen": 697,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.5394518,
+    "Durchschnittlicher SAT-Score": 977,
+    "Durchschnittlicher ACT-Score": 20
+  },
+  {
+    "Staat": "KY",
+    "Bevoelkerung": 4173405,
+    "Ufo-Sichtungen": 993,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.379352,
+    "Durchschnittlicher SAT-Score": 1015,
+    "Durchschnittlicher ACT-Score": 22
+  },
+  {
+    "Staat": "LA",
+    "Bevoelkerung": 4523628,
+    "Ufo-Sichtungen": 640,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 1.4147936,
+    "Durchschnittlicher SAT-Score": 1105,
+    "Durchschnittlicher ACT-Score": 24
+  },
+  {
+    "Staat": "ME",
+    "Bevoelkerung": 1321505,
+    "Ufo-Sichtungen": 681,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 5.1532154,
+    "Durchschnittlicher SAT-Score": 983,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "MT",
+    "Bevoelkerung": 935670,
+    "Ufo-Sichtungen": 565,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 6.038454,
+    "Durchschnittlicher SAT-Score": 1001,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "NE",
+    "Bevoelkerung": 1758787,
+    "Ufo-Sichtungen": 439,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.4960384,
+    "Durchschnittlicher SAT-Score": 1015,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "NV",
+    "Bevoelkerung": 2414807,
+    "Ufo-Sichtungen": 973,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 4.0293074,
+    "Durchschnittlicher SAT-Score": 902,
+    "Durchschnittlicher ACT-Score": 20
+  },
+  {
+    "Staat": "NH",
+    "Bevoelkerung": 1309940,
+    "Ufo-Sichtungen": 570,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 4.351344,
+    "Durchschnittlicher SAT-Score": 995,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "NJ",
+    "Bevoelkerung": 8717925,
+    "Ufo-Sichtungen": 1631,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 1.870858,
+    "Durchschnittlicher SAT-Score": 1078,
+    "Durchschnittlicher ACT-Score": 26
+  },
+  {
+    "Staat": "NM",
+    "Bevoelkerung": 1928384,
+    "Ufo-Sichtungen": 904,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 4.687863,
+    "Durchschnittlicher SAT-Score": 990,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "NY",
+    "Bevoelkerung": 19254630,
+    "Ufo-Sichtungen": 3491,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 1.8130704,
+    "Durchschnittlicher SAT-Score": 1187,
+    "Durchschnittlicher ACT-Score": 26
+  },
+  {
+    "Staat": "NC",
+    "Bevoelkerung": 8683242,
+    "Ufo-Sichtungen": 2005,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.3090453,
+    "Durchschnittlicher SAT-Score": 993,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "ND",
+    "Bevoelkerung": 636677,
+    "Ufo-Sichtungen": 148,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.3245697,
+    "Durchschnittlicher SAT-Score": 976,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "OH",
+    "Bevoelkerung": 11464042,
+    "Ufo-Sichtungen": 2627,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.291513,
+    "Durchschnittlicher SAT-Score": 1021,
+    "Durchschnittlicher ACT-Score": 22
+  },
+  {
+    "Staat": "OK",
+    "Bevoelkerung": 3547884,
+    "Ufo-Sichtungen": 825,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.3253298,
+    "Durchschnittlicher SAT-Score": 1138,
+    "Durchschnittlicher ACT-Score": 25
+  },
+  {
+    "Staat": "OR",
+    "Bevoelkerung": 3641056,
+    "Ufo-Sichtungen": 1987,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 5.457208,
+    "Durchschnittlicher SAT-Score": 1059,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "MD",
+    "Bevoelkerung": 5600388,
+    "Ufo-Sichtungen": 971,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 1.7338085,
+    "Durchschnittlicher SAT-Score": 1059,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "MA",
+    "Bevoelkerung": 6398743,
+    "Ufo-Sichtungen": 1457,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.2770097,
+    "Durchschnittlicher SAT-Score": 1314,
+    "Durchschnittlicher ACT-Score": 29
+  },
+  {
+    "Staat": "MI",
+    "Bevoelkerung": 10120860,
+    "Ufo-Sichtungen": 2245,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.218191,
+    "Durchschnittlicher SAT-Score": 1024,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "MN",
+    "Bevoelkerung": 5132799,
+    "Ufo-Sichtungen": 1172,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.2833545,
+    "Durchschnittlicher SAT-Score": 1079,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "MS",
+    "Bevoelkerung": 2921088,
+    "Ufo-Sichtungen": 456,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 1.5610622,
+    "Durchschnittlicher SAT-Score": 994,
+    "Durchschnittlicher ACT-Score": 21
+  },
+  {
+    "Staat": "MO",
+    "Bevoelkerung": 5800310,
+    "Ufo-Sichtungen": 1706,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.941222,
+    "Durchschnittlicher SAT-Score": 1060,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "PA",
+    "Bevoelkerung": 12429616,
+    "Ufo-Sichtungen": 2763,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.2229166,
+    "Durchschnittlicher SAT-Score": 1016,
+    "Durchschnittlicher ACT-Score": 22
+  },
+  {
+    "Staat": "RI",
+    "Bevoelkerung": 1076189,
+    "Ufo-Sichtungen": 310,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.8805351,
+    "Durchschnittlicher SAT-Score": 1110,
+    "Durchschnittlicher ACT-Score": 24
+  },
+  {
+    "Staat": "SC",
+    "Bevoelkerung": 4255083,
+    "Ufo-Sichtungen": 1165,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.737902,
+    "Durchschnittlicher SAT-Score": 1066,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "SD",
+    "Bevoelkerung": 775933,
+    "Ufo-Sichtungen": 214,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.75797,
+    "Durchschnittlicher SAT-Score": 1054,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "TN",
+    "Bevoelkerung": 5962959,
+    "Ufo-Sichtungen": 1305,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.188511,
+    "Durchschnittlicher SAT-Score": 1093,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "TX",
+    "Bevoelkerung": 22859968,
+    "Ufo-Sichtungen": 3998,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 1.7489089,
+    "Durchschnittlicher SAT-Score": 1035,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "UT",
+    "Bevoelkerung": 2469585,
+    "Ufo-Sichtungen": 792,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 3.2070165,
+    "Durchschnittlicher SAT-Score": 1087,
+    "Durchschnittlicher ACT-Score": 24
+  },
+  {
+    "Staat": "VT",
+    "Bevoelkerung": 623050,
+    "Ufo-Sichtungen": 332,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 5.3286257,
+    "Durchschnittlicher SAT-Score": 1116,
+    "Durchschnittlicher ACT-Score": 24
+  },
+  {
+    "Staat": "VA",
+    "Bevoelkerung": 7567465,
+    "Ufo-Sichtungen": 1509,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 1.9940628,
+    "Durchschnittlicher SAT-Score": 1167,
+    "Durchschnittlicher ACT-Score": 26
+  },
+  {
+    "Staat": "WA",
+    "Bevoelkerung": 6287759,
+    "Ufo-Sichtungen": 4621,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 7.3492002,
+    "Durchschnittlicher SAT-Score": 1139,
+    "Durchschnittlicher ACT-Score": 24
+  },
+  {
+    "Staat": "WV",
+    "Bevoelkerung": 1816856,
+    "Ufo-Sichtungen": 535,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.9446473,
+    "Durchschnittlicher SAT-Score": 1034,
+    "Durchschnittlicher ACT-Score": 22
+  },
+  {
+    "Staat": "WI",
+    "Bevoelkerung": 5536201,
+    "Ufo-Sichtungen": 1419,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 2.5631294,
+    "Durchschnittlicher SAT-Score": 1061,
+    "Durchschnittlicher ACT-Score": 23
+  },
+  {
+    "Staat": "WY",
+    "Bevoelkerung": 509294,
+    "Ufo-Sichtungen": 221,
+    "Ufo-Sichtungen pro 10.000 Einwohner": 4.33934,
+    "Durchschnittlicher SAT-Score": 561,
+    "Durchschnittlicher ACT-Score": 12
+  }
+]
