@@ -1,0 +1,104 @@
+{"index":{"_index":"correlation_drugs","_id":0}}
+{"State":"Alabama","location":[-86.902298,32.3182314],"Correlation-Coefficient":0.6368044742362892}
+{"index":{"_index":"correlation_drugs","_id":1}}
+{"State":"Alaska","location":[-149.4936733,64.2008413],"Correlation-Coefficient":0.43472565257026313}
+{"index":{"_index":"correlation_drugs","_id":2}}
+{"State":"Arizona","location":[-111.0937311,34.0489281],"Correlation-Coefficient":0.2519864210317504}
+{"index":{"_index":"correlation_drugs","_id":3}}
+{"State":"Arkansas","location":[-91.8318334,35.20105],"Correlation-Coefficient":0.03907238877494915}
+{"index":{"_index":"correlation_drugs","_id":4}}
+{"State":"California","location":[-119.4179324,36.778261],"Correlation-Coefficient":0.5454717963738405}
+{"index":{"_index":"correlation_drugs","_id":5}}
+{"State":"Colorado","location":[-105.7820674,39.5500507],"Correlation-Coefficient":0.4416670347946843}
+{"index":{"_index":"correlation_drugs","_id":6}}
+{"State":"Connecticut","location":[-73.087749,41.6032207],"Correlation-Coefficient":0.45818430092260226}
+{"index":{"_index":"correlation_drugs","_id":7}}
+{"State":"Delaware","location":[-75.52766989999999,38.9108325],"Correlation-Coefficient":0.3907372241079549}
+{"index":{"_index":"correlation_drugs","_id":8}}
+{"State":"District of Columbia","location":[-77.0368707,38.9071923],"Correlation-Coefficient":0.05826352084939109}
+{"index":{"_index":"correlation_drugs","_id":9}}
+{"State":"Florida","location":[-81.5157535,27.6648274],"Correlation-Coefficient":0.574742185061327}
+{"index":{"_index":"correlation_drugs","_id":10}}
+{"State":"Georgia","location":[-82.9000751,32.1656221],"Correlation-Coefficient":0.6962503955856807}
+{"index":{"_index":"correlation_drugs","_id":11}}
+{"State":"Hawaii","location":[-155.5827818,19.8967662],"Correlation-Coefficient":0.6494912411245904}
+{"index":{"_index":"correlation_drugs","_id":12}}
+{"State":"Idaho","location":[-114.7420408,44.0682019],"Correlation-Coefficient":0.5976369016289361}
+{"index":{"_index":"correlation_drugs","_id":13}}
+{"State":"Illinois","location":[-89.3985283,40.6331249],"Correlation-Coefficient":0.24261679867848435}
+{"index":{"_index":"correlation_drugs","_id":14}}
+{"State":"Indiana","location":[-86.1349019,40.2671941],"Correlation-Coefficient":0.5629485012015415}
+{"index":{"_index":"correlation_drugs","_id":15}}
+{"State":"Iowa","location":[-93.097702,41.8780025],"Correlation-Coefficient":0.5426987586525824}
+{"index":{"_index":"correlation_drugs","_id":16}}
+{"State":"Kansas","location":[-98.4842465,39.011902],"Correlation-Coefficient":0.5085702637508924}
+{"index":{"_index":"correlation_drugs","_id":17}}
+{"State":"Kentucky","location":[-84.2700179,37.8393332],"Correlation-Coefficient":0.6806087065377285}
+{"index":{"_index":"correlation_drugs","_id":18}}
+{"State":"Louisiana","location":[-91.96233269999999,30.9842977],"Correlation-Coefficient":0.4643973737406059}
+{"index":{"_index":"correlation_drugs","_id":19}}
+{"State":"Maine","location":[-69.4454689,45.253783],"Correlation-Coefficient":0.2484404163187769}
+{"index":{"_index":"correlation_drugs","_id":20}}
+{"State":"Montana","location":[-110.3625658,46.8796822],"Correlation-Coefficient":0.49664053675061953}
+{"index":{"_index":"correlation_drugs","_id":21}}
+{"State":"Nebraska","location":[-99.9018131,41.4925374],"Correlation-Coefficient":0.3917661506772053}
+{"index":{"_index":"correlation_drugs","_id":22}}
+{"State":"Nevada","location":[-116.419389,38.8026097],"Correlation-Coefficient":0.3784349140933168}
+{"index":{"_index":"correlation_drugs","_id":23}}
+{"State":"New Hampshire","location":[-71.5723953,43.1938516],"Correlation-Coefficient":0.314458055502838}
+{"index":{"_index":"correlation_drugs","_id":24}}
+{"State":"New Jersey","location":[-74.4056612,40.0583238],"Correlation-Coefficient":0.3398102833595035}
+{"index":{"_index":"correlation_drugs","_id":25}}
+{"State":"New Mexico","location":[-105.8700901,34.5199402],"Correlation-Coefficient":0.45424840149029033}
+{"index":{"_index":"correlation_drugs","_id":26}}
+{"State":"New York","location":[-74.0059728,40.7127753],"Correlation-Coefficient":0.40157137632629525}
+{"index":{"_index":"correlation_drugs","_id":27}}
+{"State":"North Carolina","location":[-79.01929969999999,35.7595731],"Correlation-Coefficient":0.7457218532263583}
+{"index":{"_index":"correlation_drugs","_id":28}}
+{"State":"North Dakota","location":[-101.0020119,47.5514926],"Correlation-Coefficient":-0.031959894227936256}
+{"index":{"_index":"correlation_drugs","_id":29}}
+{"State":"Ohio","location":[-82.90712300000001,40.4172871],"Correlation-Coefficient":0.4505365856535433}
+{"index":{"_index":"correlation_drugs","_id":30}}
+{"State":"Oklahoma","location":[-97.092877,35.0077519],"Correlation-Coefficient":0.419212847737092}
+{"index":{"_index":"correlation_drugs","_id":31}}
+{"State":"Oregon","location":[-120.5542012,43.8041334],"Correlation-Coefficient":0.03278802564350425}
+{"index":{"_index":"correlation_drugs","_id":32}}
+{"State":"Maryland","location":[-76.64127119999999,39.0457549],"Correlation-Coefficient":0.35139670423067376}
+{"index":{"_index":"correlation_drugs","_id":33}}
+{"State":"Massachusetts","location":[-71.3824374,42.4072107],"Correlation-Coefficient":0.3466970192355462}
+{"index":{"_index":"correlation_drugs","_id":34}}
+{"State":"Michigan","location":[-85.60236429999999,44.3148443],"Correlation-Coefficient":0.39367866107398364}
+{"index":{"_index":"correlation_drugs","_id":35}}
+{"State":"Minnesota","location":[-94.6858998,46.729553],"Correlation-Coefficient":0.546766769743969}
+{"index":{"_index":"correlation_drugs","_id":36}}
+{"State":"Mississippi","location":[-89.3985283,32.3546679],"Correlation-Coefficient":0.408775218411827}
+{"index":{"_index":"correlation_drugs","_id":37}}
+{"State":"Missouri","location":[-91.8318334,37.9642529],"Correlation-Coefficient":0.4667101488766503}
+{"index":{"_index":"correlation_drugs","_id":38}}
+{"State":"Pennsylvania","location":[-77.1945247,41.2033216],"Correlation-Coefficient":0.6178180792363083}
+{"index":{"_index":"correlation_drugs","_id":39}}
+{"State":"Rhode Island","location":[-71.4774291,41.5800945],"Correlation-Coefficient":0.5361985617609317}
+{"index":{"_index":"correlation_drugs","_id":40}}
+{"State":"South Carolina","location":[-81.1637245,33.836081],"Correlation-Coefficient":0.6000349414664934}
+{"index":{"_index":"correlation_drugs","_id":41}}
+{"State":"South Dakota","location":[-99.9018131,43.9695148],"Correlation-Coefficient":0.365806393413396}
+{"index":{"_index":"correlation_drugs","_id":42}}
+{"State":"Tennessee","location":[-86.5804473,35.5174913],"Correlation-Coefficient":0.5691112368167999}
+{"index":{"_index":"correlation_drugs","_id":43}}
+{"State":"Texas","location":[-99.9018131,31.9685988],"Correlation-Coefficient":0.41406795616609937}
+{"index":{"_index":"correlation_drugs","_id":44}}
+{"State":"Utah","location":[-111.0937311,39.3209801],"Correlation-Coefficient":0.537631288622185}
+{"index":{"_index":"correlation_drugs","_id":45}}
+{"State":"Vermont","location":[-72.57784149999999,44.5588028],"Correlation-Coefficient":0.5524820734160365}
+{"index":{"_index":"correlation_drugs","_id":46}}
+{"State":"Virginia","location":[-78.6568942,37.4315734],"Correlation-Coefficient":0.609688707839695}
+{"index":{"_index":"correlation_drugs","_id":47}}
+{"State":"Washington","location":[-120.7401385,47.7510741],"Correlation-Coefficient":0.1954747188906686}
+{"index":{"_index":"correlation_drugs","_id":48}}
+{"State":"West Virginia","location":[-80.4549026,38.5976262],"Correlation-Coefficient":0.42659293175783647}
+{"index":{"_index":"correlation_drugs","_id":49}}
+{"State":"Wisconsin","location":[-88.7878678,43.7844397],"Correlation-Coefficient":0.3662573385976538}
+{"index":{"_index":"correlation_drugs","_id":50}}
+{"State":"Wyoming","location":[-107.2902839,43.0759678],"Correlation-Coefficient":0.0076301029672550535}
+{"index":{"_index":"correlation_drugs","_id":51}}
+{"State":"USA","location":[-95.712891,37.09024],"Correlation-Coefficient":0.5862043061246243}
