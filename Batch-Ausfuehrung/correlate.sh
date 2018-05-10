@@ -9,10 +9,6 @@ python3 correlation_ufo_and_sundp500_data.py
 printf "Es folgt die Erstellung der NDJSON-Datei\n"
 java -jar ToNdJson.jar
 
-java -jar weather.jar
-./docs/correl.sh
-./docs/cmdFileForW.sh
-python3 weather.py
 
 
 printf "_________________________________________________________________________\n"
