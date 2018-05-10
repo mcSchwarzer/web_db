@@ -1,0 +1,48 @@
+Donnerkorrelation: 
+[[1.         0.23520518]
+ [0.23520518 1.        ]]
+
+SchneeEiskorrelation: 
+[[ 1.         -0.10432198]
+ [-0.10432198  1.        ]]
+
+tornadoWolkenkorrelation: 
+[[ 1.         -0.13237962]
+ [-0.13237962  1.        ]]
+
+hailkorrelation: 
+[[ 1.         -0.27812661]
+ [-0.27812661  1.        ]]
+
+nebelkorrelation: 
+[[ 1.         -0.29276111]
+ [-0.29276111  1.        ]]
+
+nrkorrelation: 
+[[1.         0.36265229]
+ [0.36265229 1.        ]]
+
+Nebelkorrelation: 
+[[ 1.         -0.52936389]
+ [-0.52936389  1.        ]]
+
+NieselRegenkorrelation: 
+[[1.         0.60800748]
+ [0.60800748 1.        ]]
+
+SchneeEiskorrelation: 
+[[ 1.         -0.11804362]
+ [-0.11804362  1.        ]]
+
+hagelkorrelation: 
+[[ 1.         -0.67010058]
+ [-0.67010058  1.        ]]
+
+donnerkorrelation: 
+[[1.         0.34551527]
+ [0.34551527 1.        ]]
+
+Tornadokorrelation: 
+[[ 1.         -0.46110282]
+ [-0.46110282  1.        ]]
+
