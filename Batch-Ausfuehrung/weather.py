@@ -87,8 +87,7 @@ with open('C:\\Users\\marku\\VS\\webdb\\groupedUFOquarter.csv') as groupedSighti
         groupedUfoList.append(int(row['sightings']))
 
 
-print("GROOOOOOOOOOOOOOOOOOOOOOOOUPED \n")
-
+s += "per quarter\r\n"
 s +="Nebelkorrelation: \r\n"
 s = s + str(np.corrcoef(groupedWeListN,groupedUfoList)) + "\r\n" + "\r\n"
 
@@ -110,9 +109,10 @@ s = s + str(np.corrcoef(groupedWeListTW,groupedUfoList)) + "\r\n" + "\r\n"
 
 print(s)
 
-file f = open('docs\\weather_Korellationen.txt', 'w+')
-text_file.write(s)
-text_file.close()
+f = open('docs\\weather_Korellationen.txt', 'w+')
+f.write("per day\r\")
+f.write(s)
+f.close()
 
 
 
