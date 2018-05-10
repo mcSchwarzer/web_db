@@ -12,6 +12,7 @@ java -jar ToNdJson.jar
 java -jar weather.jar
 ./docs/correl.sh
 ./docs/cmdFileForW.sh
+python3 weather.py
 
 
 printf "_________________________________________________________________________\n"
