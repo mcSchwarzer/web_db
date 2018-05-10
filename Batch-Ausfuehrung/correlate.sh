@@ -10,6 +10,8 @@ printf "Es folgt die Erstellung der NDJSON-Datei\n"
 java -jar ToNdJson.jar
 
 java -jar weather.jar
+./docs/correl.sh
+./docs/cmdFileForW.sh
 
 
 printf "_________________________________________________________________________\n"
