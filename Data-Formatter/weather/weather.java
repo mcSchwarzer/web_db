@@ -3,11 +3,9 @@ package weatherPackage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -121,7 +119,7 @@ public class Weather_csv_to_bulk_json {
 				String s;
 				BufferedReader br;
 				String datestring = "";
-				BufferedWriter bw = new BufferedWriter(new FileWriter(new File(ROOT + "\\docs\\wetterZwischenergebnisse\\prep_for_correl\\prep_for_correl" + fieldname +".csv")));
+				BufferedWriter bw = new BufferedWriter(new FileWriter(new File(ROOT + "\\src\\wetterZwischenergebnisse\\prep_for_correl\\prep_for_correl" + fieldname +".csv")));
 				bw.write("date(year/month/day),occurences\r\n");
 				Entry entr = new Entry(1,1,1,1);
 				for(File f : csv_weather_files){
@@ -190,7 +188,7 @@ public class Weather_csv_to_bulk_json {
 	 * @throws IOException
 	 */
 	public static File create_cmd_file(String indexName, String bulk_json_dir, String ip) throws IOException{
-		File cmdFile = new File(ROOT + "\\docs\\wetterZwischenergebnisse" + "\\" + "cmdFileForW.sh");
+		File cmdFile = new File(ROOT + "\\src\\wetterZwischenergebnisse" + "\\" + "cmdFileForW.sh");
 		BufferedWriter bw = new BufferedWriter(new FileWriter(cmdFile));	//TODO: the get ressource stuff makes not the right syntax to cd to file or dir
 		String startString = "cd curl"  /**new File(ROOT + "\\curl").getPath()**/ + "\r\n";
 		bw.write(startString);
@@ -236,7 +234,7 @@ public class Weather_csv_to_bulk_json {
 						result.add(String.format("{\"index\":{\"_index\":\"%s\",\"_id\":\"%d\"}}",IndexName,id));  //index line
 						result.add(bulk_json_line);
 						if((result.size()) >= 600000){
-							File file = new File(ROOT + "\\docs\\wetterZwischenergebnisse\\bulk_json\\bulk_json_dir\\" + nb + ".ndjson");
+							File file = new File(ROOT + "\\src\\wetterZwischenergebnisse\\bulk_json\\bulk_json_dir\\" + nb + ".ndjson");
 							nb += "1";
 							BufferedWriter bw = new BufferedWriter(new FileWriter(file));
 							for(String s : result){
@@ -252,7 +250,7 @@ public class Weather_csv_to_bulk_json {
 			}
 			br.close();
 		}
-		File curl_cmd = create_cmd_file(IndexName, ROOT  + "\\docs\\wetterZwischenergebnisse\\bulk_json\\bulk_json_dir", "141.72.191.130");
+		File curl_cmd = create_cmd_file(IndexName, ROOT  + "\\src\\wetterZwischenergebnisse\\bulk_json\\bulk_json_dir", "localhost");
 		//Runtime.getRuntime().exec("cmd /c start \"\" " + curl_cmd.getPath());
 	}
 	/***
@@ -274,7 +272,7 @@ public class Weather_csv_to_bulk_json {
 			}
 			br.close();
 
-			BufferedReader brr = new BufferedReader(new FileReader(new File(ROOT + "\\docs\\wetterZwischenergebnisse\\ufo_prep_for_c\\daily_ufos.csv")));
+			BufferedReader brr = new BufferedReader(new FileReader(new File(ROOT + "\\src\\wetterZwischenergebnisse\\ufo_prep_for_c\\daily_ufos.csv")));
 			ArrayList<String> brrList = new ArrayList<String>();
 			String brrs = "";
 
@@ -306,18 +304,18 @@ public class Weather_csv_to_bulk_json {
 	 */
 	public static void change_correl_preps_to_bulks(String prep_for_correl_path, String IndexName) throws IOException{
 		int id = 0;
-			File cmdFile = new File(ROOT + "\\docs\\wetterZwischenergebnisse\\correl.sh");
+			File cmdFile = new File(ROOT + "\\src\\wetterZwischenergebnisse\\correl.sh");
 			File[] files = new File(prep_for_correl_path).listFiles();
 			BufferedWriter bw = new BufferedWriter(new FileWriter(cmdFile));
 
 			bw.write("cd curl" +  "\r\n");
 			for(File f : files){
-				change_correl_prep_to_bulk ( f.getPath(), IndexName, (ROOT + "\\docs\\wetterZwischenergebnisse\\bulk_json\\BULK_correl\\" + f.getName().split("_")[2]) , id);
+				change_correl_prep_to_bulk ( f.getPath(), IndexName, (ROOT + "\\src\\wetterZwischenergebnisse\\bulk_json\\BULK_correl\\" + f.getName().split("_")[2]) , id);
 			}
 
-			File[] filesbulk = new File(ROOT + "\\docs\\wetterZwischenergebnisse\\bulk_json\\BULK_correl").listFiles();
+			File[] filesbulk = new File(ROOT + "\\src\\wetterZwischenergebnisse\\bulk_json\\BULK_correl").listFiles();
 			for (File bf : filesbulk){
-				bw.write(String.format("curl -H Content-Type:application/x-ndjson -XPUT localhost:9200/correltest/doc/_bulk?pretty --data-binary @%s\r\n",bf.getPath()));
+				bw.write(String.format("curl -H Content-Type:application/x-ndjson -XPUT localhost:9200/weather_daily/doc/_bulk?pretty --data-binary @\'%s\'\r\n",bf.getPath()));
 			}
 			bw.close();
 			//Runtime.getRuntime().exec("cmd /c start \"\" " + cmdFile.getPath());
@@ -347,7 +345,7 @@ public class Weather_csv_to_bulk_json {
 	 */
 	@SuppressWarnings("rawtypes")
 	public static void ufo_prep_for_corellate() throws IOException, ParseException{
-			File ufo_file = new File(ROOT + "\\src\\ufo_sightings\\ufo_data.json");
+			File ufo_file = new File(ROOT + "\\src\\fulldata.json");
 
 			JSONParser parser = new JSONParser();
 			JSONArray JsAr = (JSONArray) parser.parse(new FileReader(ufo_file));
@@ -378,7 +376,7 @@ public class Weather_csv_to_bulk_json {
 			}
 			Collections.sort(entriesRes);
 
-			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(ROOT + "\\docs\\wetterZwischenergebnisse\\ufo_prep_for_c\\daily_ufo_sightings.csv")));
+			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(ROOT + "\\src\\wetterZwischenergebnisse\\ufo_prep_for_c\\daily_ufo_sightings.csv")));
 			bw.write("date(Year,Month,Day),val_per_day\r\n");
 			for(Entry en : entriesRes){
 				bw.write(en.toString() + "\r\n");
@@ -389,8 +387,8 @@ public class Weather_csv_to_bulk_json {
 			ArrayList<String> to_be_corrected = new ArrayList<String>();
 			ArrayList<String> result = new ArrayList<String>();
 
-			BufferedReader br = new BufferedReader(new FileReader(new File(ROOT + "\\docs\\wetterZwischenergebnisse\\ufo_prep_for_c\\daily_ufo_sightings.csv")));
-			BufferedWriter resultBW = new BufferedWriter(new FileWriter(new File(ROOT + "\\docs\\wetterZwischenergebnisse\\ufo_prep_for_c\\daily_ufos.csv")));
+			BufferedReader br = new BufferedReader(new FileReader(new File(ROOT + "\\src\\wetterZwischenergebnisse\\ufo_prep_for_c\\daily_ufo_sightings.csv")));
+			BufferedWriter resultBW = new BufferedWriter(new FileWriter(new File(ROOT + "\\src\\wetterZwischenergebnisse\\ufo_prep_for_c\\daily_ufos.csv")));
 
 			String ss ;
 			br.readLine();
@@ -535,7 +533,7 @@ public class Weather_csv_to_bulk_json {
 		}
 		Collections.sort(finalFile);
 
-		BufferedWriter bwJS = new BufferedWriter(new FileWriter(new File("docs\\wetterZwischenergebnisse\\iHateMyLife.json")));
+		BufferedWriter bwJS = new BufferedWriter(new FileWriter(new File("src\\wetterZwischenergebnisse\\iHateMyLife.json")));
 		for(int doubleindex = 0; doubleindex < finalFile.size()-1 ; doubleindex++){
 			String s = file.get(doubleindex);
 			String ufo_s = finalFile.get(doubleindex);
@@ -548,6 +546,11 @@ public class Weather_csv_to_bulk_json {
 			id++;
 		}
 		bwJS.close();
+		File aaa = new File(ROOT + "\\src\\wetterZwischenergebnisse\\ihml.sh");
+		BufferedWriter lb = new BufferedWriter(new FileWriter (aaa));
+		lb.write(String.format("curl -H Content-Type:application/x-ndjson -XPUT localhost/weather_quarter/doc/_bulk?pretty --data-binary @\'%s\'", aaa.getPath()));
+		
+		lb.close();
 	}
 
 
@@ -567,16 +570,15 @@ public class Weather_csv_to_bulk_json {
 		}
         
 		try {
-			weather_csv_to_elast(ROOT + "\\src\\csv_dir", "weatherIndex");
-
+			//weather_csv_to_elast(ROOT + "\\src\\csv_dir", "us_weather_75_to_15");
 
 			ufo_prep_for_corellate();
 			prep_for_correl();
-			change_correl_preps_to_bulks(ROOT + "\\docs\\wetterZwischenergebnisse\\prep_for_correl", "justAnIndex");
+			change_correl_preps_to_bulks(ROOT + "\\src\\wetterZwischenergebnisse\\prep_for_correl", "weather_daily");
 
-			create_cmd_file("us_weather_75_to_15", ROOT + "\\docs\\wetterZwischenergebnisse\\bulk_json\\bulk_json_dir", "localhost");
+			//create_cmd_file("us_weather_75_to_15", ROOT + "\\docs\\wetterZwischenergebnisse\\bulk_json\\bulk_json_dir", "localhost");
 
-			getWeatherData(ROOT + "\\src\\csv_dir", "testIndexName", ROOT + "\\src\\ufo_sightings\\ufo_data.json");
+			getWeatherData(ROOT + "\\src\\csv_dir", "weather_quarter", ROOT + "\\src\\fulldata.json");
 
 			try {
 				Thread.sleep(5000);
@@ -672,10 +674,4 @@ public class Weather_csv_to_bulk_json {
     }
   }
 }
- *****
-{
-  "acknowledged": true,
-  "shards_acknowledged": true,
-  "index": "us_weather"
-}
- */
+**/
