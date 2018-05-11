@@ -30,9 +30,7 @@ for i in data:
 with open('src/deathsauswertung.json', 'w') as outfile:
     json.dump(vorlagedeaths, outfile)
 
-#ufos = json.load(open('/Users/Max/Desktop/Dokumente/Theoriephase IV/Webbasierte Datenbanken/Java-Workspace/Json-Converter/UFO-Sightings_fullStatenames.json'))
 ufos = json.load(open('src/fulldata.json'))
-
 
 l = [1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007,
      2008, 2009, 2010, 2011, 2012, 2013, 2014]
